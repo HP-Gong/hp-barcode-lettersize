@@ -1,6 +1,6 @@
 === Barcode Letter-Size ===
 
-Contributors: N/A
+Contributors: hpgong
 Donate link: N/A
 Tags: barcodes, print barcodes
 Version: 1.0.0
