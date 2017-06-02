@@ -29,7 +29,7 @@
         inputFileName: "inputFile",
         inputFileClass: "inputFile",
 
-        deleteButtonValue: "<center><a href='#' style='font-size: 9px; color: #000000; text-decoration:none;' title='Click on X to delete bar'><p style='margin: -4px 0px 0px 0px;'>X</p></a></center>",
+        deleteButtonValue: "<center><a href='#' style='font-size: 9px; color: #000000; text-decoration:none;' title='Click on X to delete bar'><p style='margin: 0px 0px 0px -2px;'>X</p></a></center>",
         deleteButtonClass: "deleteButton",
 
         automaticUpload: false,
