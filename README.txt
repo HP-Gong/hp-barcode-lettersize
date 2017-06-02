@@ -29,6 +29,10 @@ in stock so you can keep track monthly.
 
 == Changelog == 
 
+= Version 1.0.0 =
+* First public release.
+* Beta.
+
 = Version 1.1.0 =
 * Maintenance.
 * Modify & Update codes on the plugin.
@@ -42,7 +46,19 @@ N/A
 
 == Screenshots == 
 
-In the barcode-overview.pdf file.
+N/A
+
+== Instructions ==
+
+== Instructions ==
+
+The instructions is in the master zip file
+
+Read the barcode-overview.pdf for more details how the plugin works and how to print from the browsers
+
+The Barcode Letter-Size plugin can display 48 barcodes per print page. 
+
+It's best to print out 1 sheet at a time.
 
 == Frequently Asked Questions == 
 
@@ -70,19 +86,14 @@ A. There are 3 different options and there are six codetype designs
 5. code39
 6. codabar
 
-<h4> Browsers </h4>
+Q. Why 4 browsers to print out the barcodes?
+A. It's preference. The instructions is in the barcode-overview.pdf.
+   These are the current browsers to print out the barcodes:
 
-These are the current browsers that display the plugin correctly and will print out the barcodes:
+<h4>4 Browsers</h4>
 
 1. FireFox (Current Version: 53.0.3 and up)
 2. Chrome (Current Version: 58.0 and up)
 3. Opera (Current Version: 45.0 and up)
 4. Internet Explorer (Last Version: 11)
 
-== Instructions to Print ==
-
-Read the barcode-overview.pdf for more details how the plugin works and how to print from the browsers
-
-The Barcode Letter-Size plugin can only display 48 barcodes per print page. 
-
-It's best to print out 1 sheet at a time.
