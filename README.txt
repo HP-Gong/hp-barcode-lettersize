@@ -50,8 +50,6 @@ N/A
 
 == Instructions ==
 
-== Instructions ==
-
 The instructions is in the master zip file
 
 Read the barcode-overview.pdf for more details how the plugin works and how to print from the browsers
