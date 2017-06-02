@@ -23,7 +23,7 @@ function hp_barcode_img_t($title) {
 	
 	if ( strtolower($code_type) == "code128a" ) { 	// Code128a 
 		$text = (isset($_GET["text"])?$_GET["text"]:"11111111111"); // length of the barcode
-	    $size = (isset($_GET["size"])?$_GET["size"]:"25"); // height of the barcode
+	    $size = (isset($_GET["size"])?$_GET["size"]:"35"); // height of the barcode
 		$chksum = 103; // checksum 103
 		$text = strtoupper($text); // Code 128A doesn't support lower case
 		// Must not change order of array elements as the checksum depends on the array's key to validate final code
@@ -67,27 +67,27 @@ function hp_barcode_img_t($title) {
 		imagefilledrectangle( $bars, 0, $location, $img_width, $cur_size, ($position % 2 == 0 ? $white : $black) );
 		$location = $cur_size;
 		}
-		$bar_img = imagecreate(($cur_size+1) < 190 ? 190 : ($cur_size+1), 55);
+		$bar_img = imagecreate(($cur_size+2) < 0 ? 0 : ($cur_size+2), 70);
 		$black = imagecolorallocate ($bar_img, 0, 0, 0);
 		$white = imagecolorallocate ($bar_img, 255, 255, 255);
 		
 		$font = 2;	
 
-		$xMax1 = 95;
-		$xMin1 = 95;// x Location of imagestring 95
-		$y1 = 40; // y Location of imagestring
+		$xMax1 = 80;
+		$xMin1 = 80;// x Location of imagestring 80
+		$y1 = 55; // y Location of imagestring
 		$txtW1 = imagefontwidth( $font ) * strlen( $title );
 		$xL1 = ( $xMax1 - $xMin1 - $txtW1 ) / 2 + $xMin1 + $font;
 		
 		imagefill( $bar_img, 0, 0, $white );
-		imagecopyresized($bar_img, $bars, 15, 15, 0, 0, $cur_size, $img_height, $cur_size, $img_height);	 
+		imagecopyresized($bar_img, $bars, 0, 18, 0, 0, $cur_size, $img_height, $cur_size, $img_height);	 
 		imagestring($bar_img, $font, $xL1, $y1, $title, $black); 
-		
+
 		return $bar_img; 
 		
 	} elseif( strtolower($code_type) == "code128b" ) { 	// Code128b 
 		$text = (isset($_GET["text"])?$_GET["text"]:"11111111111"); // length of the barcode
-	    $size = (isset($_GET["size"])?$_GET["size"]:"25"); // height of the barcode
+	    $size = (isset($_GET["size"])?$_GET["size"]:"35"); // height of the barcode
 		$chksum = 104; // checksum 104
 		// Must not change order of array elements as the checksum depends on the array's key to validate final code
 		$b_array = array(" "=>"212222","!"=>"222122","\""=>"222221","#"=>"121223","$"=>"121322","%"=>"131222","&"=>"122213","'"=>"122312","("=>"132212",")"=>"221213","*"=>"221312","+"=>"231212",","=>"112232","-"=>"122132","."=>"122231","/"=>"113222","0"=>"123122","1"=>"123221","2"=>"223211","3"=>"221132","4"=>"221231","5"=>"213212","6"=>"223112","7"=>"312131","8"=>"311222","9"=>"321122",":"=>"321221",";"=>"312212","<"=>"322112","="=>"322211",">"=>"212123","?"=>"212321","@"=>"232121","A"=>"111323","B"=>"131123","C"=>"131321","D"=>"112313","E"=>"132113","F"=>"132311","G"=>"211313","H"=>"231113","I"=>"231311","J"=>"112133","K"=>"112331","L"=>"132131","M"=>"113123","N"=>"113321","O"=>"133121","P"=>"313121","Q"=>"211331","R"=>"231131","S"=>"213113","T"=>"213311","U"=>"213131","V"=>"311123","W"=>"311321","X"=>"331121","Y"=>"312113","Z"=>"312311","["=>"332111","\""=>"314111","]"=>"221411","^"=>"431111","_"=>"111224","`"=>"111422","a"=>"121124","b"=>"121421","c"=>"141122","d"=>"141221","e"=>"112214","f"=>"112412","g"=>"122114","h"=>"122411","i"=>"142112","j"=>"142211","k"=>"241211","l"=>"221114","m"=>"413111","n"=>"241112","o"=>"134111","p"=>"111242","q"=>"121142","r"=>"121241","s"=>"114212","t"=>"124112","u"=>"124211","v"=>"411212","w"=>"421112","x"=>"421211","y"=>"212141","z"=>"214121","{"=>"412121","|"=>"111143","}"=>"111341","~"=>"131141","del"=>"114113","fnc 3"=>"114311","fnc 2"=>"411113","Shift"=>"411311","code C"=>"113141","fnc 4"=>"114131","code A"=>"311141","fnc 1"=>"411131","Start A"=>"211412","Start B"=>"211214","Start C"=>"211232","Stop"=>"2331112");
@@ -129,27 +129,27 @@ function hp_barcode_img_t($title) {
 		imagefilledrectangle( $bars, 0, $location, $img_width, $cur_size, ($position % 2 == 0 ? $white : $black) );
 		$location = $cur_size;
 		}
-		$bar_img = imagecreate(($cur_size+1) < 190 ? 190 : ($cur_size+1), 55);
+		$bar_img = imagecreate(($cur_size+2) < 0 ? 0 : ($cur_size+2), 70);
 		$black = imagecolorallocate ($bar_img, 0, 0, 0);
 		$white = imagecolorallocate ($bar_img, 255, 255, 255);
 		
 		$font = 2;	
 
-		$xMax1 = 95;
-		$xMin1 = 95;// x Location of imagestring 95
-		$y1 = 40; // y Location of imagestring
+		$xMax1 = 80;
+		$xMin1 = 80;// x Location of imagestring 80
+		$y1 = 55; // y Location of imagestring
 		$txtW1 = imagefontwidth( $font ) * strlen( $title );
 		$xL1 = ( $xMax1 - $xMin1 - $txtW1 ) / 2 + $xMin1 + $font;
 		
 		imagefill( $bar_img, 0, 0, $white );
-		imagecopyresized($bar_img, $bars, 15, 15, 0, 0, $cur_size, $img_height, $cur_size, $img_height);	 
+		imagecopyresized($bar_img, $bars, 0, 18, 0, 0, $cur_size, $img_height, $cur_size, $img_height);	 
 		imagestring($bar_img, $font, $xL1, $y1, $title, $black); 
-		
-		return $bar_img; 
+
+		return $bar_img;  
 		
 	} elseif( strtolower($code_type) == "code128c" ) { 	// Code128c
 		$text = (isset($_GET["text"])?$_GET["text"]:"11111111111"); // length of the barcode
-	    $size = (isset($_GET["size"])?$_GET["size"]:"25"); // height of the barcode
+	    $size = (isset($_GET["size"])?$_GET["size"]:"35"); // height of the barcode
 		$chksum = 105; // checksum 105
 		// Must not change order of array elements as the checksum depends on the array's key to validate final code
 		$b_array = array(" "=>"212222","!"=>"222122","\""=>"222221","#"=>"121223","$"=>"121322","%"=>"131222","&"=>"122213","'"=>"122312","("=>"132212",")"=>"221213","*"=>"221312","+"=>"231212",","=>"112232","-"=>"122132","."=>"122231","/"=>"113222","0"=>"123122","1"=>"123221","2"=>"223211","3"=>"221132","4"=>"221231","5"=>"213212","6"=>"223112","7"=>"312131","8"=>"311222","9"=>"321122",":"=>"321221",";"=>"312212","<"=>"322112","="=>"322211",">"=>"212123","?"=>"212321","@"=>"232121","A"=>"111323","B"=>"131123","C"=>"131321","D"=>"112313","E"=>"132113","F"=>"132311","G"=>"211313","H"=>"231113","I"=>"231311","J"=>"112133","K"=>"112331","L"=>"132131","M"=>"113123","N"=>"113321","O"=>"133121","P"=>"313121","Q"=>"211331","R"=>"231131","S"=>"213113","T"=>"213311","U"=>"213131","V"=>"311123","W"=>"311321","X"=>"331121","Y"=>"312113","Z"=>"312311","["=>"332111","\""=>"314111","]"=>"221411","^"=>"431111","_"=>"111224","`"=>"111422","a"=>"121124","b"=>"121421","c"=>"141122","d"=>"141221","e"=>"112214","f"=>"112412","g"=>"122114","h"=>"122411","i"=>"142112","j"=>"142211","k"=>"241211","l"=>"221114","m"=>"413111","n"=>"241112","o"=>"134111","p"=>"111242","q"=>"121142","r"=>"121241","s"=>"114212","t"=>"124112","u"=>"124211","v"=>"411212","w"=>"421112","x"=>"421211","y"=>"212141","z"=>"214121","{"=>"412121","|"=>"111143","}"=>"111341","~"=>"131141","del"=>"114113","fnc 3"=>"114311","fnc 2"=>"411113","Shift"=>"411311","code C"=>"113141","fnc 4"=>"114131","code A"=>"311141","fnc 1"=>"411131","Start A"=>"211412","Start B"=>"211214","Start C"=>"211232","Stop"=>"2331112");
@@ -191,20 +191,20 @@ function hp_barcode_img_t($title) {
 		imagefilledrectangle( $bars, 0, $location, $img_width, $cur_size, ($position % 2 == 0 ? $white : $black) );
 		$location = $cur_size;
 		}
-		$bar_img = imagecreate(($cur_size+1) < 190 ? 190 : ($cur_size+1), 55);
+		$bar_img = imagecreate(($cur_size+2) < 0 ? 0 : ($cur_size+2), 70);
 		$black = imagecolorallocate ($bar_img, 0, 0, 0);
 		$white = imagecolorallocate ($bar_img, 255, 255, 255);
 		
 		$font = 2;	
 
-		$xMax1 = 95;
-		$xMin1 = 95;// x Location of imagestring 95
-		$y1 = 40; // y Location of imagestring
+		$xMax1 = 80;
+		$xMin1 = 80;// x Location of imagestring 80
+		$y1 = 55; // y Location of imagestring
 		$txtW1 = imagefontwidth( $font ) * strlen( $title );
 		$xL1 = ( $xMax1 - $xMin1 - $txtW1 ) / 2 + $xMin1 + $font;
 		
 		imagefill( $bar_img, 0, 0, $white );
-		imagecopyresized($bar_img, $bars, 15, 15, 0, 0, $cur_size, $img_height, $cur_size, $img_height);	 
+		imagecopyresized($bar_img, $bars, 0, 18, 0, 0, $cur_size, $img_height, $cur_size, $img_height);	 
 		imagestring($bar_img, $font, $xL1, $y1, $title, $black); 
 
 		return $bar_img; 
@@ -254,20 +254,20 @@ function hp_barcode_img_t($title) {
 		imagefilledrectangle( $bars, 0, $location, $img_width, $cur_size, ($position % 2 == 0 ? $white : $black) );
 		$location = $cur_size;
 		}
-		$bar_img = imagecreate(($cur_size+1) < 190 ? 190 : ($cur_size+1), 70);
+		$bar_img = imagecreate(($cur_size+2) < 0 ? 0 : ($cur_size+2), 70);
 		$black = imagecolorallocate ($bar_img, 0, 0, 0);
 		$white = imagecolorallocate ($bar_img, 255, 255, 255);
 		
 		$font = 2;	
 
-		$xMax1 = 95;
-		$xMin1 = 95;// x Location of imagestring 95
+		$xMax1 = 80;
+		$xMin1 = 80;// x Location of imagestring 85
 		$y1 = 55; // y Location of imagestring
 		$txtW1 = imagefontwidth( $font ) * strlen( $title );
 		$xL1 = ( $xMax1 - $xMin1 - $txtW1 ) / 2 + $xMin1 + $font;
 		
 		imagefill( $bar_img, 0, 0, $white );
-		imagecopyresized($bar_img, $bars, 14, 15, 0, 0, $cur_size, $img_height, $cur_size, $img_height);	 
+		imagecopyresized($bar_img, $bars, 0, 15, 0, 0, $cur_size, $img_height, $cur_size, $img_height);	 
 		imagestring($bar_img, $font, $xL1, $y1, $title, $black); 
 		
 		return $bar_img; 
@@ -323,26 +323,26 @@ function hp_barcode_img_t($title) {
 		imagefilledrectangle( $bars, 0, $location, $img_width, $cur_size, ($position % 2 == 0 ? $white : $black) );
 		$location = $cur_size;
 		}
-		$bar_img = imagecreate(($cur_size+1) < 190 ? 190 : ($cur_size+1), 70);
+	    $bar_img = imagecreate(($cur_size+2) < 0 ? 0 : ($cur_size+2), 70);
 		$black = imagecolorallocate ($bar_img, 0, 0, 0);
 		$white = imagecolorallocate ($bar_img, 255, 255, 255);
 		
 		$font = 2;	
 
-		$xMax1 = 95;
-		$xMin1 = 95;// x Location of imagestring 95
+		$xMax1 = 80;
+		$xMin1 = 80;// x Location of imagestring 85
 		$y1 = 55; // y Location of imagestring
 		$txtW1 = imagefontwidth( $font ) * strlen( $title );
 		$xL1 = ( $xMax1 - $xMin1 - $txtW1 ) / 2 + $xMin1 + $font;
 		
 		imagefill( $bar_img, 0, 0, $white );
-		imagecopyresized($bar_img, $bars, 14, 15, 0, 0, $cur_size, $img_height, $cur_size, $img_height);	 
+		imagecopyresized($bar_img, $bars, 0, 15, 0, 0, $cur_size, $img_height, $cur_size, $img_height);	 
 		imagestring($bar_img, $font, $xL1, $y1, $title, $black); 
 		
 		return $bar_img; 
 		
 	} elseif ( strtolower($code_type) == "codabar" ) { 	// Codabar
-		$text = (isset($_GET["text"])?$_GET["text"]:"1111111111111"); // length of the barcode
+		$text = (isset($_GET["text"])?$_GET["text"]:"111111111111"); // length of the barcode
 	    $size = (isset($_GET["size"])?$_GET["size"]:"40"); // height of the barcode
 		$b_array1 = array("0","1","2","3","4","5","6","7","8","9","-","$",":","/",".","+","A","B","C","D");
 		$b_array2 = array("11111221","11112211","11121121","22111111","11211211","21111211","12111121","12112111","12211111","21121111","11122111","11221111","21112121","21211121","21212111","11222221","11221211","12121121","11121221","11122211");
@@ -384,20 +384,20 @@ function hp_barcode_img_t($title) {
 		imagefilledrectangle( $bars, 0, $location, $img_width, $cur_size, ($position % 2 == 0 ? $white : $black) );
 		$location = $cur_size;
 		}
-		$bar_img = imagecreate(($cur_size+1) < 190 ? 190 : ($cur_size+1), 70);
+		$bar_img = imagecreate(($cur_size+2) < 0 ? 0 : ($cur_size+2), 70);
 		$black = imagecolorallocate ($bar_img, 0, 0, 0);
 		$white = imagecolorallocate ($bar_img, 255, 255, 255);
 		
 		$font = 2;	
 
-		$xMax1 = 95;
-		$xMin1 = 95;// x Location of imagestring 95
+		$xMax1 = 80;
+		$xMin1 = 80;// x Location of imagestring 85
 		$y1 = 55; // y Location of imagestring
 		$txtW1 = imagefontwidth( $font ) * strlen( $title );
 		$xL1 = ( $xMax1 - $xMin1 - $txtW1 ) / 2 + $xMin1 + $font;
 		
 		imagefill( $bar_img, 0, 0, $white );
-		imagecopyresized($bar_img, $bars, 14, 15, 0, 0, $cur_size, $img_height, $cur_size, $img_height);	 
+		imagecopyresized($bar_img, $bars, 0, 15, 0, 0, $cur_size, $img_height, $cur_size, $img_height);	 
 		imagestring($bar_img, $font, $xL1, $y1, $title, $black); 
 		
 		return $bar_img; 
