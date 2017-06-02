@@ -29,4 +29,4 @@ li{display: list-item;list-style-position: inside;}
 
 #ol-tag{column-count:4; -o-column-count:4; -moz-column-count:4; -webkit-column-count:4; list-style-type: square;}
 
-div.controls.jQuery-image-upload-controls{width: 12px; height: 14px; margin: 0px 0px 0px 14px; border:0px solid black; background-color: #ffffff;}
+div.controls.jQuery-image-upload-controls{width: 12px; height: 14px; margin: 0px 0px 0px 0px; border:0px solid black;}
