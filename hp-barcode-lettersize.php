@@ -5,7 +5,7 @@
  * Plugin Name: Barcode Letter-Size
  * Plugin URI: https://github.com/hp-gong/hp-barcode-lettersize
  * Description: Creating and Printing Barcodes on Letter-Size Papers.
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: H.P. Gong
  * Author URI: https://github.com/hp-gong/
  * GitHub Plugin URI: https://github.com/hp-gong/hp-barcode-lettersize
@@ -56,11 +56,11 @@ if(!class_exists('HP_Barcode')){
 	   // activated in order for Barcode Letter-Size plugin to run
 	   public function check_versions(){
 	    global $woocommerce;
-	    if (version_compare($woocommerce->version, '2.6.13', '<')){
+	    if (version_compare($woocommerce->version, '3.0.7', '<')){
 	    $url = admin_url('/plugins.php');
 	    require_once(ABSPATH . 'wp-admin/includes/plugin.php');
 	    deactivate_plugins( plugin_basename( __FILE__ ));
-	    wp_die( __('Barcode Letter-Size is disabled.<br>Barcode Letter-Size requires a minimum of WooCommerce v2.6.13.<br><a href="'.$url.'">Return to the Plugins section</a>'));
+	    wp_die( __('Barcode Letter-Size is disabled.<br>Barcode Letter-Size requires a minimum of WooCommerce v3.0.7.<br><a href="'.$url.'">Return to the Plugins section</a>'));
 	    }
 	    }
        
@@ -88,8 +88,6 @@ if(!class_exists('HP_Barcode')){
 		else {
 		$products = sanitize_text_field(trim($_POST['products']));
 		$len = sanitize_text_field(trim($_POST['len']));
-		$pad1 = sanitize_text_field(trim($_POST['pad1']));
-		$pad2 = sanitize_text_field(trim($_POST['pad2'])); 
 		}
 		}
 	    }
@@ -164,13 +162,7 @@ if(!class_exists('HP_Barcode')){
 	   $img_output = ob_get_clean();
 	   $img_base64 = 'data:image/png;base64,' .base64_encode($img_output); 
 	   
-	   $pad1 = isset($_POST['pad1']) ? $_POST['pad1'] : '';
-	   $pad2 = isset($_POST['pad2']) ? $_POST['pad2'] : '';
-
-       foreach ( $pad1 as $key => $p ) {
-	   echo '<style>.image{ padding-top:'.intval($p).'px; padding-left: 22px; padding-bottom:'.intval($pad2[$key]).'px; padding-right: 22px;}</style>';
-	   }
-	   echo '<img src="'.$img_base64.'" class="image" style="display: block; float: left;">';
+	   echo '<img src="'.$img_base64.'" class="image" style="display: block; float: left; border: 1px solid #021a40; padding-top: 3px; padding-left: 4px; padding-bottom:3px; padding-right: 4px;">';
 	   echo "<script>$('.image').imageUpload({formAction: '/'});</script>";
 	   } 
 	   echo '</div>';
@@ -221,38 +213,6 @@ if(!class_exists('HP_Barcode')){
 	   echo '<input type="range" id="len" name="len" style="width: 400px;" max="31" min="2" step="1" onchange="updateTextInput1(this.value);"><br>';
 	   echo '<label for="len1">Length of the Title on the Barcode: <input type="text" required id="length" style="width: 35px;" class="at-required"></label>';
 	   echo '<div class="message0" style="color: red;">Enter the product title length, the number must be between 2 and 31.</div>';
-	   echo '</div>';
-	   
-	   echo '<p>Adjusting the Padding to move the images up and down to adjust the print page:</p>';
-	   
-	   echo '<div class="message-box1">';
-	   echo '<div class="message1" style="color: red;">Enter between 10 and 11 for Padding-Top.</div>';
-	   echo '<div class="message2" style="color: red;">Enter between 10 and 11 for Padding-Top.</div>';
-	   echo '<div class="message3" style="color: red;">Enter between 10 and 11 for Padding-Top.</div>';
-	   echo '<div class="message4" style="color: red;">Enter between 1 and 2 for Padding-Top.</div>';
-	   echo '<div class="message5" style="color: red;">Enter between 1 and 2 for Padding-Top.</div>';
-	   echo '<div class="message6" style="color: red;">Enter between 1 and 2 for Padding-Top.</div>';
-	   echo '</div><br>';
-	  
-	   echo '<div class="pad1a">';
-	   echo '<script type="text/javascript">function updateTextInput2(val) {document.getElementById("padding1").value=val;}</script>'; 
-	   echo '<input type="range" id="pad1" name="pad1[0]" style="width: 60px;" max="" min="" step="1" onchange="updateTextInput2(this.value);"><br>';
-	   echo '<label for="pad1a">Padding-Top: <input type="text" required id="padding1" style="width: 35px;" class="at-required"></label>';
-	   echo '</div><br>';
-	   
-	   echo '<div class="message-box1">';
-	   echo '<div class="message1" style="color: red;">Enter between 24 and 30 for Padding-Bottom.</div>';
-	   echo '<div class="message2" style="color: red;">Enter between 24 and 30 for Padding-Bottom</div>';
-	   echo '<div class="message3" style="color: red;">Enter between 24 and 30 for Padding-Bottom</div>';
-	   echo '<div class="message4" style="color: red;">Enter between 17 and 25 for Padding-Bottom</div>';
-	   echo '<div class="message5" style="color: red;">Enter between 17 and 25 for Padding-Bottom</div>';
-	   echo '<div class="message6" style="color: red;">Enter between 17 and 25 for Padding-Bottom</div>';
-	   echo '</div><br>';
-	   
-	   echo '<div class="pad2a">';
-	   echo '<script type="text/javascript">function updateTextInput3(val) {document.getElementById("padding2").value=val;}</script>'; 
-	   echo '<input type="range" id="pad2" name="pad2[0]" style="width: 200px;" max="" min="" step="1" onchange="updateTextInput3(this.value);"><br>';
-	   echo '<label for="pad2a">Padding-Bottom: <input type="text" required id="padding2" style="width: 35px;" class="at-required"></label>';
 	   echo '</div>';
 	   
 	   echo '</div>';
@@ -318,13 +278,7 @@ if(!class_exists('HP_Barcode')){
 	   $img_output = ob_get_clean();
 	   $img_base64 = 'data:image/png;base64,' .base64_encode($img_output); 
 	   
-	   $pad1 = isset($_POST['pad1']) ? $_POST['pad1'] : '';
-	   $pad2 = isset($_POST['pad2']) ? $_POST['pad2'] : '';
-
-       foreach ( $pad1 as $key => $p ) {
-	   echo '<style>.image{ padding-top:'.intval($p).'px; padding-left: 22px; padding-bottom:'.intval($pad2[$key]).'px; padding-right: 22px;}</style>';
-	   }
-	   echo '<img src="'.$img_base64.'" class="image" style="display: block; float: left;">';
+	   echo '<img src="'.$img_base64.'" class="image" style="display: block; float: left; border: 1px solid #021a40; padding-top: 3px; padding-left: 4px; padding-bottom:3px; padding-right: 4px;">';
 	   echo "<script>$('.image').imageUpload({formAction: '/'});</script>";
 	   } 
 	   echo '</div>';
@@ -357,7 +311,7 @@ if(!class_exists('HP_Barcode')){
 	   echo '<fieldset>';
 	   echo '<div class="codetype">'; 
 	   echo '<label for="codetype">Select CodeType:</label>';
-	   echo '<select name="codetype" required id="codetype" data-required="Please Select Codetype." class="at-required">';
+	   echo '<select name="codetype" required id="codetype" data-required="Please Select Codetype." require class="at-required">';
 	   echo '<option selected value=""></option>';
 	    
 	   $c1 = array("code128a","code128b","code128c","code39","code25","codabar");
@@ -377,38 +331,6 @@ if(!class_exists('HP_Barcode')){
 	   echo '<div class="message0" style="color: red;">Enter the product title length, the number must be between 2 and 31.</div>';
 	   echo '</div>';
 	   
-	   echo '<p>Adjusting the Padding to move the images up and down to adjust the print page:</p>';
-	   
-	   echo '<div class="message-box1">';
-	   echo '<div class="message1" style="color: red;">Enter between 10 and 11 for Padding-Top.</div>';
-	   echo '<div class="message2" style="color: red;">Enter between 10 and 11 for Padding-Top.</div>';
-	   echo '<div class="message3" style="color: red;">Enter between 10 and 11 for Padding-Top.</div>';
-	   echo '<div class="message4" style="color: red;">Enter between 1 and 2 for Padding-Top.</div>';
-	   echo '<div class="message5" style="color: red;">Enter between 1 and 2 for Padding-Top.</div>';
-	   echo '<div class="message6" style="color: red;">Enter between 1 and 2 for Padding-Top.</div>';
-	   echo '</div><br>';
-	  
-	   echo '<div class="pad1a">';
-	   echo '<script type="text/javascript">function updateTextInput2(val) {document.getElementById("padding1").value=val;}</script>'; 
-	   echo '<input type="range" id="pad1" name="pad1[0]" style="width: 60px;" max="" min="" step="1" onchange="updateTextInput2(this.value);"><br>';
-	   echo '<label for="pad1a">Padding-Top: <input type="text" required id="padding1" style="width: 35px;" class="at-required"></label>';
-	   echo '</div><br>';
-	   
-	   echo '<div class="message-box1">';
-	   echo '<div class="message1" style="color: red;">Enter between 24 and 30 for Padding-Bottom.</div>';
-	   echo '<div class="message2" style="color: red;">Enter between 24 and 30 for Padding-Bottom</div>';
-	   echo '<div class="message3" style="color: red;">Enter between 24 and 30 for Padding-Bottom</div>';
-	   echo '<div class="message4" style="color: red;">Enter between 17 and 25 for Padding-Bottom</div>';
-	   echo '<div class="message5" style="color: red;">Enter between 17 and 25 for Padding-Bottom</div>';
-	   echo '<div class="message6" style="color: red;">Enter between 17 and 25 for Padding-Bottom</div>';
-	   echo '</div><br>';
-	   
-	   echo '<div class="pad2a">';
-	   echo '<script type="text/javascript">function updateTextInput3(val) {document.getElementById("padding2").value=val;}</script>'; 
-	   echo '<input type="range" id="pad2" name="pad2[0]" style="width: 200px;" max="" min="" step="1" onchange="updateTextInput3(this.value);"><br>';
-	   echo '<label for="pad2a">Padding-Bottom: <input type="text" required id="padding2" style="width: 35px;" class="at-required"></label>';
-	   echo '</div>';
-	   
 	   echo '</div>';
 	   echo '</fieldset><br>';
 	   
@@ -416,11 +338,11 @@ if(!class_exists('HP_Barcode')){
 	   echo '<input type="hidden" id="product-'.sanitize_text_field($post->ID).'" name="products[]" class="products" value='.sanitize_text_field($post->ID).' checked="checked" />';
 	   }
 	   
- 	   wp_nonce_field('barcode_display_products_n', 'barcode_display_products_nonce');
+	   wp_nonce_field('barcode_display_products_n', 'barcode_display_products_nonce');
 	   echo '<input type="submit" class="btn_blue" name="btn_blue" value="Generate">';
 	   echo '<input type="reset" class="btn_reds" name="btn_reds" value="Reset">'; 
-	   echo '</form>';    
-	   } 
+	   echo '</form>'; 
+   }
 	
    // This function will create the Sku barcode. 
    // The results will display on the same page    
@@ -473,13 +395,7 @@ if(!class_exists('HP_Barcode')){
 	   $img_output = ob_get_clean();
 	   $img_base64 = 'data:image/png;base64,' .base64_encode($img_output); 
 	   
-	   $pad1 = isset($_POST['pad1']) ? $_POST['pad1'] : '';
-	   $pad2 = isset($_POST['pad2']) ? $_POST['pad2'] : '';
-
-       foreach ( $pad1 as $key => $p ) {
-	   echo '<style>.image{ padding-top:'.intval($p).'px; padding-left: 22px; padding-bottom:'.intval($pad2[$key]).'px; padding-right: 22px;}</style>';
-	   }
-	   echo '<img src="'.$img_base64.'" class="image" style="display: block; float: left;">';
+	   echo '<img src="'.$img_base64.'" class="image" style="display: block; float: left; border: 1px solid #021a40; padding-top: 3px; padding-left: 4px; padding-bottom:3px; padding-right: 4px;">';
 	   echo "<script>$('.image').imageUpload({formAction: '/'});</script>";
 	   } 
 	   echo '</div>';
@@ -512,7 +428,7 @@ if(!class_exists('HP_Barcode')){
 	   echo '<fieldset>';
 	   echo '<div class="codetype">'; 
 	   echo '<label for="codetype">Select CodeType:</label>';
-	   echo '<select name="codetype" required id="codetype" data-required="Please Select Codetype." class="at-required">';
+	   echo '<select name="codetype" required id="codetype" data-required="Please Select Codetype." require class="at-required">';
 	   echo '<option selected value=""></option>';
 	    
 	   $c1 = array("code128a","code128b","code128c","code39","code25","codabar");
@@ -522,7 +438,7 @@ if(!class_exists('HP_Barcode')){
 		  
 	   echo '</select>';
 	   echo '</div>';
-
+	   
 	   echo '<div class="code128a code128b code128c code39 code25 codabar box"><br>';
 	   
 	   echo '<div class="len1">';
@@ -530,38 +446,6 @@ if(!class_exists('HP_Barcode')){
 	   echo '<input type="range" id="len" name="len" style="width: 400px;" max="31" min="2" step="1" onchange="updateTextInput1(this.value);"><br>';
 	   echo '<label for="len1">Length of the Title on the Barcode: <input type="text" required id="length" style="width: 35px;" class="at-required"></label>';
 	   echo '<div class="message0" style="color: red;">Enter the product title length, the number must be between 2 and 31.</div>';
-	   echo '</div>';
-	   
-	   echo '<p>Adjusting the Padding to move the images up and down to adjust the print page:</p>';
-	   
-	   echo '<div class="message-box1">';
-	   echo '<div class="message1" style="color: red;">Enter between 10 and 11 for Padding-Top.</div>';
-	   echo '<div class="message2" style="color: red;">Enter between 10 and 11 for Padding-Top.</div>';
-	   echo '<div class="message3" style="color: red;">Enter between 10 and 11 for Padding-Top.</div>';
-	   echo '<div class="message4" style="color: red;">Enter between 1 and 2 for Padding-Top.</div>';
-	   echo '<div class="message5" style="color: red;">Enter between 1 and 2 for Padding-Top.</div>';
-	   echo '<div class="message6" style="color: red;">Enter between 1 and 2 for Padding-Top.</div>';
-	   echo '</div><br>';
-	  
-	   echo '<div class="pad1a">';
-	   echo '<script type="text/javascript">function updateTextInput2(val) {document.getElementById("padding1").value=val;}</script>'; 
-	   echo '<input type="range" id="pad1" name="pad1[0]" style="width: 60px;" max="" min="" step="1" onchange="updateTextInput2(this.value);"><br>';
-	   echo '<label for="pad1a">Padding-Top: <input type="text" required id="padding1" style="width: 35px;" class="at-required"></label>';
-	   echo '</div><br>';
-	   
-	   echo '<div class="message-box1">';
-	   echo '<div class="message1" style="color: red;">Enter between 24 and 30 for Padding-Bottom.</div>';
-	   echo '<div class="message2" style="color: red;">Enter between 24 and 30 for Padding-Bottom</div>';
-	   echo '<div class="message3" style="color: red;">Enter between 24 and 30 for Padding-Bottom</div>';
-	   echo '<div class="message4" style="color: red;">Enter between 17 and 25 for Padding-Bottom</div>';
-	   echo '<div class="message5" style="color: red;">Enter between 17 and 25 for Padding-Bottom</div>';
-	   echo '<div class="message6" style="color: red;">Enter between 17 and 25 for Padding-Bottom</div>';
-	   echo '</div><br>';
-	   
-	   echo '<div class="pad2a">';
-	   echo '<script type="text/javascript">function updateTextInput3(val) {document.getElementById("padding2").value=val;}</script>'; 
-	   echo '<input type="range" id="pad2" name="pad2[0]" style="width: 200px;" max="" min="" step="1" onchange="updateTextInput3(this.value);"><br>';
-	   echo '<label for="pad2a">Padding-Bottom: <input type="text" required id="padding2" style="width: 35px;" class="at-required"></label>';
 	   echo '</div>';
 	   
 	   echo '</div>';
@@ -574,9 +458,9 @@ if(!class_exists('HP_Barcode')){
 	   wp_nonce_field('barcode_display_products_n', 'barcode_display_products_nonce');
 	   echo '<input type="submit" class="btn_blue" name="btn_blue" value="Generate">';
 	   echo '<input type="reset" class="btn_reds" name="btn_reds" value="Reset">'; 
-	   echo '</form>';   
-       } 
-   }
+	   echo '</form>'; 
+       }
+    }
 	  // Check if HP_Barcode exists then 
 	  // the plugin will activate or deactivate
 	  if(class_exists('HP_Barcode')){
