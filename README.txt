@@ -31,7 +31,6 @@ in stock so you can keep track monthly.
 
 = Version 1.0.0 =
 * First public release.
-* Beta.
 
 = Version 1.1.0 =
 * Maintenance.
