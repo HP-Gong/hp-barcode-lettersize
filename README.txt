@@ -29,10 +29,10 @@ in stock so you can keep track monthly.
 
 == Changelog == 
 
-= Version 1.0.0 =
+= Version 1.0.0 = Mar-13-2017
 * First public release.
 
-= Version 1.1.0 =
+= Version 1.1.0 = Jun-01-2017
 * Maintenance.
 * Modify & Update codes on the plugin.
 * Remove padding functions to the barcode images.
