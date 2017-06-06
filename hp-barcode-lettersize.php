@@ -43,7 +43,7 @@ if(!class_exists('HP_Barcode')){
       
 	  // Check if WooCommerce plugin is install and activated
 	  // in order for Barcode Letter-Size plugin to run
-	  public function check_if_woo_install(){
+	  public static function check_if_woo_install(){
 	   if (! class_exists('WooCommerce')){ 
 	   $url = admin_url('/plugins.php');
 	   require_once(ABSPATH . 'wp-admin/includes/plugin.php');
@@ -54,7 +54,7 @@ if(!class_exists('HP_Barcode')){
 
        // Check if WooCommerce plugin has the current version and
 	   // activated in order for Barcode Letter-Size plugin to run
-	   public function check_versions(){
+	   public static function check_versions(){
 	    global $woocommerce;
 	    if (version_compare($woocommerce->version, '3.0.7', '<')){
 	    $url = admin_url('/plugins.php');
@@ -65,7 +65,7 @@ if(!class_exists('HP_Barcode')){
 	    }
        
 	   // Add Menu Button/Menu Page & Submenu Buttons/Submenu Pages
-	   public function add_admin_menu(){
+	   public static function add_admin_menu(){
 		add_menu_page('Create Barcodes', 'Create Barcodes', 'administrator', 'hp_ts_barcode_display_products', array($this, 'plugin_settings'), hp_barcode_lettersize_url_p . 'img/icon.png', 59);
 		add_submenu_page('hp_ts_barcode_display_products', 'Title & Sku', 'Title & Sku', 'manage_options', 'hp_ts_barcode_display_products', 'hp_ts_barcode_display_products', 'hp_ts_barcode_display_products1');
 		add_submenu_page('hp_ts_barcode_display_products', 'Title', 'Title', 'manage_options', 'hp_t_barcode_display_products', 'hp_t_barcode_display_products', 'hp_t_barcode_display_products2');
@@ -73,14 +73,14 @@ if(!class_exists('HP_Barcode')){
 		}
 		
 		// Only Administrator have permissions to access this page
-	   public function plugin_settings() {
+	    public static function plugin_settings() {
 	    if (!current_user_can('administrator')){
 	    wp_die('You do not have sufficient permissions to access this page.');
 	    }
 	    }
 		
 		// Verify Nonce Form
-	   public function validate_form() {	
+		public static function validate_form() {	
         if(isset($_POST['btn_blue'])){
         if (!isset($_POST['barcode_display_products_nonce']) || !wp_verify_nonce($_POST['barcode_display_products_nonce'], 'barcode_display_products_n')){
         wp_die('You do not have access to this page.');
@@ -93,7 +93,7 @@ if(!class_exists('HP_Barcode')){
 	    }
 	
 	    // Register the jQuery & CSS scripts and link the files
-	   public function create_barcode_scripts(){  
+	    public static function create_barcode_scripts(){  
 	    // jQuery
 	    wp_enqueue_script('jquery');
 		// jQuery scripts for barcode
@@ -109,8 +109,8 @@ if(!class_exists('HP_Barcode')){
 	    wp_register_style('barcode', hp_barcode_lettersize_url_p . 'css/barcode.css');;
 	    wp_enqueue_style('barcode');
 	    }
-    }
-	
+   
+  }	
 	
    // This function will create the Title & Sku barcode. 
    // The results will display on the same page 
@@ -230,7 +230,7 @@ if(!class_exists('HP_Barcode')){
     
    // This function will create the Title barcode. 
    // The results will display on the same page 
-   function hp_t_barcode_display_products(){
+    function hp_t_barcode_display_products(){
 
 	   echo '<h2>Generate Barcodes: Title</h2>';
 	  
@@ -346,7 +346,7 @@ if(!class_exists('HP_Barcode')){
 	
    // This function will create the Sku barcode. 
    // The results will display on the same page    
-   function hp_s_barcode_display_products(){
+    function hp_s_barcode_display_products(){
 
 	   echo '<h2>Generate Barcodes: Sku</h2>';
 	  
@@ -468,4 +468,5 @@ if(!class_exists('HP_Barcode')){
 		register_deactivation_hook( __FILE__, array('HP_Barcode', 'deactivate_hp_barcode_lettersize'));
 		$HP_Barcode = new HP_Barcode();
 	  }
+	
 ?>
