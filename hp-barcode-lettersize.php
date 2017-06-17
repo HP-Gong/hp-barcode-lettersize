@@ -20,7 +20,7 @@ if(! defined('ABSPATH')){exit;}
 
 // Define urls
 define('hp_barcode_lettersize_url_p', plugin_dir_url( __FILE__ ));
-define('hp_barcode_lettersize_url_i', includes_url( __FILE__ ));
+//define('hp_barcode_lettersize_url_i', includes_url( __FILE__ ));
 
 // Check is HP_Barcode exists 
 if(!class_exists('HP_Barcode')){
