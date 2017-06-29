@@ -14,6 +14,8 @@
  *
  *   - HP Gong 
  */
+
+if(! defined('ABSPATH')){exit;} 
  
 function hp_barcode_img_t($title) {
 	// Get pararameters that are passed in through $_GET or set to the default value
