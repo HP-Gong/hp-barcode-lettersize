@@ -147,8 +147,11 @@ if(!class_exists('HP_Barcode')){
 	   $query->the_post();
 	  
 	   require_once 'gd/hp-title-sku-barcode-gd.php';
-	    
-	   $len = isset($_POST['len']) ? $_POST['len'] : '';
+	   
+	   $len = sanitize_text_field(trim($_POST['len']));	
+	   
+	   $len = intval( $_POST['len']);
+	   if(!$len) {$len = '';}
 	  
 	   if ($len){
 	   $string = mb_strimwidth(get_the_title(), 0, intval($len), ' ');
@@ -263,8 +266,11 @@ if(!class_exists('HP_Barcode')){
 	   $query->the_post();
 	  
 	   require_once 'gd/hp-title-barcode-gd.php';
-	    
-	   $len = isset($_POST['len']) ? $_POST['len'] : '';
+	   
+	   $len = sanitize_text_field(trim($_POST['len']));	
+	   
+	   $len = intval( $_POST['len']);
+	   if(!$len) {$len = '';}
 	  
 	   if ($len){
 	   $string = mb_strimwidth(get_the_title(), 0, intval($len), ' ');
@@ -380,7 +386,10 @@ if(!class_exists('HP_Barcode')){
 	  
 	   require_once 'gd/hp-sku-barcode-gd.php';
 	    
-	   $len = isset($_POST['len']) ? $_POST['len'] : '';
+	   $len = sanitize_text_field(trim($_POST['len']));	
+	   
+	   $len = intval( $_POST['len']);
+	   if(!$len) {$len = '';}
 	  
 	   if ($len){
 	   $string = mb_strimwidth(get_the_title(), 0, intval($len), ' ');
