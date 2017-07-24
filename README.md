@@ -67,6 +67,6 @@ These are the languages and software I used for the Barcode-Letter-Size plugin:
 
 Language: HTML, CSS, JQuery, OOP PHP, Wordpress Codex
 
-Software: Dreamweaver, Photoshop and Indesign
+Software: Atom, Photoshop and Indesign
 
 -- HP Gong
