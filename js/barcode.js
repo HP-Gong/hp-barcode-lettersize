@@ -6,7 +6,7 @@
  
 (function( $ ) {
 // Display codetype option in div using show() and hide() function,
-// and also display additional messages and max and min for the input boxes
+// and also display additional messages for the length of the title
 $(document).ready(function(){
 $("#codetype").change(function(){
 $(this).find("option:selected").each(function(){
