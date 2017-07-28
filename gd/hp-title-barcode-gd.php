@@ -263,7 +263,7 @@ function hp_barcode_img_t($title) {
 		$font = 2;	
 
 		$xMax1 = 80;
-		$xMin1 = 80;// x Location of imagestring 85
+		$xMin1 = 80;// x Location of imagestring 80
 		$y1 = 55; // y Location of imagestring
 		$txtW1 = imagefontwidth( $font ) * strlen( $title );
 		$xL1 = ( $xMax1 - $xMin1 - $txtW1 ) / 2 + $xMin1 + $font;
@@ -332,7 +332,7 @@ function hp_barcode_img_t($title) {
 		$font = 2;	
 
 		$xMax1 = 80;
-		$xMin1 = 80;// x Location of imagestring 85
+		$xMin1 = 80;// x Location of imagestring 80
 		$y1 = 55; // y Location of imagestring
 		$txtW1 = imagefontwidth( $font ) * strlen( $title );
 		$xL1 = ( $xMax1 - $xMin1 - $txtW1 ) / 2 + $xMin1 + $font;
@@ -393,7 +393,7 @@ function hp_barcode_img_t($title) {
 		$font = 2;	
 
 		$xMax1 = 80;
-		$xMin1 = 80;// x Location of imagestring 85
+		$xMin1 = 80;// x Location of imagestring 80
 		$y1 = 55; // y Location of imagestring
 		$txtW1 = imagefontwidth( $font ) * strlen( $title );
 		$xL1 = ( $xMax1 - $xMin1 - $txtW1 ) / 2 + $xMin1 + $font;
