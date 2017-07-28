@@ -165,7 +165,7 @@ if(!class_exists('HP_Barcode')){
 	   $img_output = ob_get_clean();
 	   $img_base64 = 'data:image/png;base64,' .base64_encode($img_output); 
 	   
-	   echo '<img src="'.$img_base64.'" class="image" style="display: block; float: left; border: 1px solid #021a40; padding-top: 3px; padding-left: 4px; padding-bottom:3px; padding-right: 4px;">';
+	   echo '<img src="'.$img_base64.'" class="image" style="background-color: white; display: block; float: left; border: 1px solid #021a40; padding-top: 3px; padding-left: 4px; padding-bottom:3px; padding-right: 4px;">';
 	   echo "<script>$('.image').imageUpload({formAction: '/'});</script>";
 	   } 
 	   echo '</div>';
@@ -284,7 +284,7 @@ if(!class_exists('HP_Barcode')){
 	   $img_output = ob_get_clean();
 	   $img_base64 = 'data:image/png;base64,' .base64_encode($img_output); 
 	   
-	   echo '<img src="'.$img_base64.'" class="image" style="display: block; float: left; border: 1px solid #021a40; padding-top: 3px; padding-left: 4px; padding-bottom:3px; padding-right: 4px;">';
+	   echo '<img src="'.$img_base64.'" class="image" style="background-color: white; display: block; float: left; border: 1px solid #021a40; padding-top: 3px; padding-left: 4px; padding-bottom:3px; padding-right: 4px;">';
 	   echo "<script>$('.image').imageUpload({formAction: '/'});</script>";
 	   } 
 	   echo '</div>';
@@ -404,7 +404,7 @@ if(!class_exists('HP_Barcode')){
 	   $img_output = ob_get_clean();
 	   $img_base64 = 'data:image/png;base64,' .base64_encode($img_output); 
 	   
-	   echo '<img src="'.$img_base64.'" class="image" style="display: block; float: left; border: 1px solid #021a40; padding-top: 3px; padding-left: 4px; padding-bottom:3px; padding-right: 4px;">';
+	   echo '<img src="'.$img_base64.'" class="image" style="background-color: white; display: block; float: left; border: 1px solid #021a40; padding-top: 3px; padding-left: 4px; padding-bottom:3px; padding-right: 4px;">';
 	   echo "<script>$('.image').imageUpload({formAction: '/'});</script>";
 	   } 
 	   echo '</div>';
