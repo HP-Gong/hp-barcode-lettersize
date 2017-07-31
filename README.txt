@@ -3,10 +3,10 @@
 Contributors: hpgong
 Donate link: N/A
 Tags: barcodes, print barcodes
-Version: 1.1.0
+Version: 1.1.1
 Requires at least: 4.8
 Tested up to: 4.8 
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 Author: H.P. Gong
 Author URI: https://github.com/hp-gong
 GitHub Plugin URI: https://github.com/hp-gong/hp-barcode-lettersize
@@ -29,6 +29,12 @@ in stock so you can keep track monthly.
 
 == Changelog == 
 
+= Version 1.1.1 = 07-30-2017
+* Maintenance.
+* Modify & Update codes on the plugin.
+* Remove Preview function for the barcode images.
+* Update Instructions for the barcode-overview.pdf.
+
 = Version 1.1.0 = 06-01-2017
 * Maintenance.
 * Modify & Update codes on the plugin.
@@ -49,7 +55,7 @@ N/A
 
 == Instructions ==
 
-Click here <a href="https://github.com/HP-Gong/hp-barcode-lettersize/raw/master/barcode-overview.pdf">barcode-overview.pdf</a> to download the instructions
+Click here <a href="https://github.com/hp-gong/hp-barcode-lettersize/raw/master/barcode-overview.pdf">barcode-overview.pdf</a> to download the instructions
 
 Read the barcode-overview.pdf for more details how the plugin works and how to print from the browsers
 
@@ -89,3 +95,7 @@ A. There are 3 different options and there are six codetype designs
 4. code25
 5. code39
 6. codabar
+
+Q. What happened if I deactivate the plugin or delete the plugin?
+A. If you deactivate the plugin it will stay on the plugin page and the Bar tables will be still on wordpress database. But if you delete/remove the plugin it will delete the folders, files and also the tables from the
+wordpress database.
