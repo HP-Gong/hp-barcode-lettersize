@@ -1,9 +1,9 @@
    /*
   *  Additional jQuery code require for the Barcode Letter-Size plugin to run
   *
-  *   - HP Gong 
+  *   - HP Gong
   */
- 
+
 (function( $ ) {
 // Display codetype option in div using show() and hide() function,
 // and also display additional messages for the length of the title
@@ -52,23 +52,6 @@ $(function(){
 $('input[id=length]').keypress(function(event){
 event.preventDefault();
 });
-});	
-
-$(function(){
-$('#printOut').click(function(e){
-e.preventDefault();
-var w = window.open();
-var printOne = $('.print_barcodes').html();
-w.document.write('<html><head><title>Generated Barcordes Lettersize</title></head><body><style type="text/css">@media print {@page { size:8.5in 11in; margin:.2in .3in .2in .3in; size: portrait; mso-header-margin:.1in; mso-footer-margin:.1in; mso-paper-source:0; orphans:0; widows:0;}</style><p style="-o-box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;margin: 0px 0px 0px 5px;">' + printOne + '</p></body></html>');
-w.document.close();
-return false;
 });
-});	
 
-// This function will refresh the page back to the first page.
-$(function(){	
-$('#back').click(function() {
-location.reload();
-});	
-});	
 })( jQuery );
