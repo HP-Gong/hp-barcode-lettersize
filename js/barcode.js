@@ -6,7 +6,7 @@
 
 (function( $ ) {
 // Display codetype option in div using show() and hide() function,
-// and also display additional messages for the length of the title
+// and also display additional messages and max and min for the input boxes
 $(document).ready(function(){
 $("#codetype").change(function(){
 $(this).find("option:selected").each(function(){
@@ -52,6 +52,18 @@ $(function(){
 $('input[id=length]').keypress(function(event){
 event.preventDefault();
 });
-});
 
+function printData(){
+   var divToPrint=document.getElementById("printBar");
+   newWin= window.open("");
+   newWin.document.write(divToPrint.outerHTML);
+   newWin.print();
+   newWin.close();
+}
+
+$('.btn_blues').on('click',function(){
+printData();
+})
+
+});
 })( jQuery );

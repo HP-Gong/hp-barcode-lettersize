@@ -1,4 +1,4 @@
-/**!
+﻿/**!
 	* Valida - jQuery plugin to validate forms in a as simple as possible way.
 	* Copyright (c) 2011-2013, Rogério Taques.
 	*
@@ -52,8 +52,7 @@
 
   /*
   *  Added new code and modify the current code for the Barcode Letter-Size plugin 
-  *  This is where I add the pad1[] & pad2[] array in the input box and used foreach php to run a loop.
-  *  This also add validation to the form to be fill out correctly before it is submitted
+  *  This validate the form to be fill out correctly before it is submitted.
   *
   *   - HP Gong 
   */
