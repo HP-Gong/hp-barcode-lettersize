@@ -3,10 +3,10 @@
 Contributors: hpgong
 Donate link: N/A
 Tags: barcodes, print barcodes
-Version: 1.1.1
+Version: 1.1.2
 Requires at least: 4.8
 Tested up to: 4.8 
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 Author: H.P. Gong
 Author URI: https://github.com/hp-gong
 GitHub Plugin URI: https://github.com/hp-gong/hp-barcode-lettersize
@@ -29,20 +29,27 @@ in stock so you can keep track monthly.
 
 == Changelog == 
 
-= 07-30-2017 - Version 1.1.1 = 
+= Version 1.1.2 = 08-05-2017
+* Modify & Update codes on the plugin.
+* Add Delete function for each barcode images.
+* Add Checkboxes near the top right corner of each barcode images.
+* Add 'Select All Checkboxes' function.
+* Update Instructions for the barcode-overview.pdf.
+
+= Version 1.1.1 = 07-30-2017
 * Maintenance.
 * Modify & Update codes on the plugin.
 * Remove Preview function for the barcode images.
 * Update Instructions for the barcode-overview.pdf.
 
-= 06-01-2017 - Version 1.1.0 = 
+= Version 1.1.0 = 06-01-2017
 * Maintenance.
 * Modify & Update codes on the plugin.
 * Remove padding functions to the barcode images.
 * Added borders to the barcode images.
 * Update Instructions to print barcode.
 
-= 03-13-2017 - Version 1.0.0 = 
+= Version 1.0.0 = 03-13-2017
 * First release.
 
 == Upgrade Notice ==
@@ -68,7 +75,7 @@ These are the 4 current browsers to print out the barcodes:
 
 The Barcode Letter-Size plugin can display 48 barcodes per print page. 
 
-It's best to print out 1 sheet at a time.
+I recommended that you delete the barcode(s) once you print the ones you wanted so you save space on your website.
 
 == Frequently Asked Questions == 
 

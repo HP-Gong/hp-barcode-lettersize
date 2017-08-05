@@ -28,7 +28,9 @@ These are the 4 current browsers to print out the barcodes:
 3. Opera (Current Version: 45.0 and up)
 4. Internet Explorer (Last Version: 11)
 
-It's best to print out 1 sheet at a time.
+The Barcode Letter-Size plugin can display 48 barcodes per print page. 
+
+I recommended that you delete the barcode(s) once you print the ones you wanted so you save space on your website.
 
 == Frequently Asked Questions == 
 
