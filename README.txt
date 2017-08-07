@@ -4,8 +4,8 @@ Contributors: hpgong
 Donate link: N/A
 Tags: barcodes, print barcodes
 Version: 1.1.2
-Requires at least: 4.8
-Tested up to: 4.8 
+Requires at least: 4.8.1
+Tested up to: 4.8.1
 Stable tag: 1.1.2
 Author: H.P. Gong
 Author URI: https://github.com/hp-gong
