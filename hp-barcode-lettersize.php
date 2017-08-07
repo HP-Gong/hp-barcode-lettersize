@@ -598,13 +598,6 @@ if(!class_exists('HP_Barcode')){
 
 	  echo '<div class="code128a code128b code128c code39 code25 codabar box"><br>';
 
-	  echo '<div class="len1">';
-	  echo '<script type="text/javascript">function updateTextInput1(val) {document.getElementById("length").value=val;}</script>';
-	  echo '<input type="range" id="len" name="len" style="width: 400px;" max="31" min="2" step="1" onchange="updateTextInput1(this.value);"><br>';
-	  echo '<label for="len1">Length of the Title on the Barcode: <input type="text" required id="length" style="width: 35px;" class="at-required"></label>';
-	  echo '<div class="message0" style="color: red;">Enter the product title length, the number must be between 2 and 31.</div>';
-	  echo '</div>';
-
 	  echo '</div>';
 	  echo '</fieldset><br>';
 
