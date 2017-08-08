@@ -156,6 +156,16 @@ if(!class_exists('HP_Barcode')){
 		} else{
 		}
 		}
+		if(isset($_POST['btn_reds'])){
+		if (!isset($_POST['barcode_display_products_nonce_1']) || !wp_verify_nonce($_POST['barcode_display_products_nonce_1'], 'barcode_display_products_n2')){
+		wp_die('You do not have access to this page.');
+		} else{
+		}
+		if (!isset($_POST['barcode_display_products_nonce_2']) || !wp_verify_nonce($_POST['barcode_display_products_nonce_2'], 'barcode_display_products_n1')){
+		wp_die('You do not have access to this page.');
+		} else{
+		}
+		}
 	    }
 
 
