@@ -146,6 +146,16 @@ if(!class_exists('HP_Barcode')){
 		$len = sanitize_text_field(trim($_POST['len']));
 		}
 		}
+		if(isset($_POST['btn_blues'])){
+		if (!isset($_POST['barcode_display_products_nonce_1']) || !wp_verify_nonce($_POST['barcode_display_products_nonce_1'], 'barcode_display_products_n2')){
+		wp_die('You do not have access to this page.');
+		} else{
+		}
+		if (!isset($_POST['barcode_display_products_nonce_2']) || !wp_verify_nonce($_POST['barcode_display_products_nonce_2'], 'barcode_display_products_n1')){
+		wp_die('You do not have access to this page.');
+		} else{
+		}
+		}
 	    }
 
 
@@ -284,7 +294,7 @@ if(!class_exists('HP_Barcode')){
 	  // This function will display the Title & Sku barcode
 	  function hp_ts_display_barcode(){             
 	  
-          echo '<br>';
+      echo '<br>';
 	  echo '<h2>Display Title & Sku</h2>';
 	  global $wpdb;
 	  $result1 = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}woo_bar1");
