@@ -4,8 +4,8 @@ Contributors: hpgong
 Donate link: N/A
 Tags: barcodes, print barcodes
 Version: 1.1.2
-Requires at least: 4.8.1
-Tested up to: 4.8.1
+Requires at least: 4.8
+Tested up to: 4.8 
 Stable tag: 1.1.2
 Author: H.P. Gong
 Author URI: https://github.com/hp-gong
@@ -20,7 +20,8 @@ The purpose of the Barcode Letter-Size plugin is to create barcodes to identify/
 inventory, you can check to see how many products you have in stock on the website and compare what you actually have in your 
 storage or warehouse. This will help you keep track the actual number of products you have in stock and then you will update the 
 actual numbers on the website. Most likely you have to create an excel sheet that has your products, sku, prices and the number 
-in stock so you can keep track monthly
+in stocks so you can keep track monthly or you can download this plugin: <a href="https://wordpress.org/plugins/easy-export/">Easy EXport</a> 
+that also keep track of the products or used both.
 
 == Installation ==
 
@@ -29,27 +30,27 @@ in stock so you can keep track monthly
 
 == Changelog == 
 
-= Version 1.1.2 - 08-05-2017 =
+= Version 1.1.2 = 08-05-2017
 * Modify & Update codes on the plugin.
 * Add Delete function for each barcode images.
 * Add Checkboxes near the top right corner of each barcode images.
 * Add 'Select All Checkboxes' function.
 * Update Instructions for the barcode-overview.pdf.
 
-= Version 1.1.1 - 07-30-2017 =
+= Version 1.1.1 = 07-30-2017
 * Maintenance.
 * Modify & Update codes on the plugin.
 * Remove Preview function for the barcode images.
 * Update Instructions for the barcode-overview.pdf.
 
-= Version 1.1.0 - 06-01-2017 =
+= Version 1.1.0 = 06-01-2017
 * Maintenance.
 * Modify & Update codes on the plugin.
 * Remove padding functions to the barcode images.
 * Added borders to the barcode images.
 * Update Instructions to print barcode.
 
-= Version 1.0.0 - 03-13-2017 =
+= Version 1.0.0 = 03-13-2017
 * First release.
 
 == Upgrade Notice ==

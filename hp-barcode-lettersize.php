@@ -3,7 +3,7 @@
  * Barcode Letter-Size
  *
  * Plugin Name: Barcode Letter-Size
- * Plugin URI: https://github.com/hp-gong/hp-barcode-lettersize
+ * Plugin URI: https://wordpress.org/plugins/barcode-lettersize
  * Description: Creating and Printing Barcodes on Letter-Size Papers.
  * Version: 1.1.2
  * Author: H.P. Gong
