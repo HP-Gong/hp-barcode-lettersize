@@ -20,7 +20,7 @@ The purpose of the Barcode Letter-Size plugin is to create barcodes to identify/
 inventory, you can check to see how many products you have in stock on the website and compare what you actually have in your 
 storage or warehouse. This will help you keep track the actual number of products you have in stock and then you will update the 
 actual numbers on the website. Most likely you have to create an excel sheet that has your products, sku, prices and the number 
-in stock so you can keep track monthly.
+in stock so you can keep track monthly
 
 == Installation ==
 
