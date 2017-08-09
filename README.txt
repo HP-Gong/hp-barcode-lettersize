@@ -4,8 +4,8 @@ Contributors: hpgong
 Donate link: N/A
 Tags: barcodes, print barcodes
 Version: 1.1.2
-Requires at least: 4.8
-Tested up to: 4.8 
+Requires at least: 4.8.1
+Tested up to: 4.8.1
 Stable tag: 1.1.2
 Author: H.P. Gong
 Author URI: https://github.com/hp-gong
@@ -18,10 +18,7 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
 The purpose of the Barcode Letter-Size plugin is to create barcodes to identify/match your products. So when you do your 
 inventory, you can check to see how many products you have in stock on the website and compare what you actually have in your 
-storage or warehouse. This will help you keep track the actual number of products you have in stock and then you will update the 
-actual numbers on the website. Most likely you have to create an excel sheet that has your products, sku, prices and the number 
-in stocks so you can keep track monthly or you can download this plugin: <a href="https://wordpress.org/plugins/easy-export/">Easy EXport</a> 
-that also keep track of the products or used both.
+storage or warehouse. This will help you keep track the actual number of products you have in stock and then you will update the actual numbers on the website. Most likely you have to create an excel sheet that has your products, sku, prices and the number in stocks so you can keep track monthly or you can download this plugin: <a href="https://wordpress.org/plugins/easy-export/">Easy Export</a> that also keep track of the products or used both.
 
 == Installation ==
 
