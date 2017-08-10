@@ -11,6 +11,8 @@ update the actual numbers on the website. Most likely you have to create an exce
 and the number in stocks so you can keep track monthly or you can download this plugin: <a href="https://wordpress.org/plugins/easy-export/">Easy EXport</a> 
 that also keep track of the products or used both.
 
+When you scan the barcode(s) on all 3 options, the SKU will appear only.
+
 == Installation ==
 
 1. Upload the plugin from your WordPress Plugins section
@@ -38,6 +40,10 @@ I recommended that you delete the barcode(s) once you print the ones you wanted 
 Q. How many bar appears on the each sheets?
 
 A. The Barcode Letter-Size plugin can display 48 barcodes per print page.
+
+Q. What will it appear when scan on the barcode(s)?
+
+A. When you scan the barcode(s) on all 3 options, the SKU will appear.
 
 Q. What kind of labels are used for the Barcode Letter-Size plugin?
 

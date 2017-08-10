@@ -3,10 +3,10 @@
 Contributors: hpgong
 Donate link: N/A
 Tags: barcodes, print barcodes
-Version: 1.1.2
+Version: 1.1.3
 Requires at least: 4.8.1
 Tested up to: 4.8.1
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 Author: H.P. Gong
 Author URI: https://github.com/hp-gong
 GitHub Plugin URI: https://github.com/hp-gong/hp-barcode-lettersize
@@ -20,12 +20,19 @@ The purpose of the Barcode Letter-Size plugin is to create barcodes to identify/
 inventory, you can check to see how many products you have in stock on the website and compare what you actually have in your 
 storage or warehouse. This will help you keep track the actual number of products you have in stock and then you will update the actual numbers on the website. Most likely you have to create an excel sheet that has your products, sku, prices and the number in stocks so you can keep track monthly or you can download this plugin: <a href="https://wordpress.org/plugins/easy-export/">Easy Export</a> that also keep track of the products or used both.
 
+When you scan the barcode(s) on all 3 options, the SKU will appear only.
+
 == Installation ==
 
 1. Upload the plugin from your WordPress Plugins section
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Changelog == 
+
+= Version 1.1.3 = 08-09-2017
+* Modify & Update codes on the plugin.
+* Add scan SKU for all 3 options, no scan Title
+* Update Instructions for the barcode-overview.pdf.
 
 = Version 1.1.2 = 08-05-2017
 * Modify & Update codes on the plugin.
@@ -79,6 +86,9 @@ I recommended that you delete the barcode(s) once you print the ones you wanted 
 
 Q. How many bar appears on the each sheets?
 A. The Barcode Letter-Size plugin can display 48 barcodes per print page.
+
+Q. What will it appear when scan on the barcode(s)?
+A. When you scan the barcode(s) on all 3 options, the SKU will appear only.
 
 Q. What kind of labels are used for the Barcode Letter-Size plugin?
 A. You have to used a Full-Sheet Labels / Full Page Labels.

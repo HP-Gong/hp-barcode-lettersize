@@ -5,7 +5,7 @@
  * Plugin Name: Barcode Letter-Size
  * Plugin URI: https://wordpress.org/plugins/barcode-lettersize
  * Description: Creating and Printing Barcodes on Letter-Size Papers.
- * Version: 1.1.2
+ * Version: 1.1.3
  * Author: H.P. Gong
  * Author URI: https://github.com/hp-gong/
  * GitHub Plugin URI: https://github.com/hp-gong/hp-barcode-lettersize
@@ -147,21 +147,21 @@ if(!class_exists('HP_Barcode')){
 		}
 		}
 		if(isset($_POST['btn_blues'])){
-		if (!isset($_POST['barcode_display_products_nonce_3']) || !wp_verify_nonce($_POST['barcode_display_products_nonce_3'], 'barcode_display_products_n4')){
+		if (!isset($_POST['barcode_display_products_nonce_1']) || !wp_verify_nonce($_POST['barcode_display_products_nonce_1'], 'barcode_display_products_n2')){
 		wp_die('You do not have access to this page.');
 		} else{
 		}
-		if (!isset($_POST['barcode_display_products_nonce_4']) || !wp_verify_nonce($_POST['barcode_display_products_nonce_4'], 'barcode_display_products_n3')){
+		if (!isset($_POST['barcode_display_products_nonce_2']) || !wp_verify_nonce($_POST['barcode_display_products_nonce_2'], 'barcode_display_products_n1')){
 		wp_die('You do not have access to this page.');
 		} else{
 		}
 		}
 		if(isset($_POST['btn_reds'])){
-		if (!isset($_POST['barcode_display_products_nonce_5']) || !wp_verify_nonce($_POST['barcode_display_products_nonce_5'], 'barcode_display_products_n6')){
+		if (!isset($_POST['barcode_display_products_nonce_1']) || !wp_verify_nonce($_POST['barcode_display_products_nonce_1'], 'barcode_display_products_n2')){
 		wp_die('You do not have access to this page.');
 		} else{
 		}
-		if (!isset($_POST['barcode_display_products_nonce_6']) || !wp_verify_nonce($_POST['barcode_display_products_nonce_6'], 'barcode_display_products_n5')){
+		if (!isset($_POST['barcode_display_products_nonce_2']) || !wp_verify_nonce($_POST['barcode_display_products_nonce_2'], 'barcode_display_products_n1')){
 		wp_die('You do not have access to this page.');
 		} else{
 		}
@@ -224,8 +224,10 @@ if(!class_exists('HP_Barcode')){
 	  if ($len){
 	  $string = mb_strimwidth(get_the_title(), 0, intval($len), ' ');
 	  }
+	  
+	  $sku = get_post_meta(get_the_ID(), '_sku', true);	
 
-	  $img = hp_barcode_img_ts($string, get_the_ID());
+	  $img = hp_barcode_img_ts($string, $sku);
 
 	  ob_start();
 	  imagepng($img);
@@ -266,7 +268,6 @@ if(!class_exists('HP_Barcode')){
 	  wp_nonce_field('barcode_display_products_n2', 'barcode_display_products_nonce_1');
 	  echo '<script type="text/javascript">$(document).ready(function() {$("#valida").valida();});</script><br>';
 	  echo '<fieldset>';
-	  wp_nonce_field('barcode_display_products_n5', 'barcode_display_products_nonce_6');
 	  echo '<div class="codetype">';
 	  echo '<label for="codetype">Select CodeType:</label>';
 	  echo '<select name="codetype" required id="codetype" data-required="Please Select Codetype." require class="at-required">';
@@ -298,7 +299,6 @@ if(!class_exists('HP_Barcode')){
 
 	  wp_nonce_field('barcode_display_products_n1', 'barcode_display_products_nonce_2');
 	  echo '<input type="submit" class="btn_blue" name="btn_blue" value="Generate">';
-	  wp_nonce_field('barcode_display_products_n6', 'barcode_display_products_nonce_5');
 	  echo '<input type="reset" class="btn_reds" name="btn_reds" value="Reset">';
 	  echo '</form>';
 	  }
@@ -313,7 +313,7 @@ if(!class_exists('HP_Barcode')){
 	  echo '<p style="font-size: 14px;"><strong> Total Numbers of Barcode:<span style="margin: 0px 0px 0px 6px;">'.esc_js(esc_html(count($result1))).'</span></strong> </p>';
 	  echo '<br>';
 	  echo '<form method="POST" action="">';
-      wp_nonce_field('barcode_display_products_n3', 'barcode_display_products_nonce_4');
+          wp_nonce_field('barcode_display_products_n1', 'barcode_display_products_nonce_2');
 	  if ($_SERVER['REQUEST_METHOD']=="POST" && $_POST['remove_bar']) {
 	  if ($_GET['bar']) $_POST['bar'][] = $_GET['bar'];
 	  $count = 0;
@@ -326,7 +326,6 @@ if(!class_exists('HP_Barcode')){
 	  }
 	  echo '<table style="border-collapse: collapse; width: 100%; border: 1px solid black; background-color: white;" id="printBar">
 	  <tbody>';
-	  wp_nonce_field('barcode_display_products_n5', 'barcode_display_products_nonce_6');
 	  global $wpdb;
 	  $row_count=0;
 	  $col_count=0;
@@ -349,11 +348,10 @@ if(!class_exists('HP_Barcode')){
 	  }
 	  echo '</tbody></table>'; 
 	  echo '<br>';
-      wp_nonce_field('barcode_display_products_n4', 'barcode_display_products_nonce_3');
+      wp_nonce_field('barcode_display_products_n2', 'barcode_display_products_nonce_1');
       echo '<input type="hidden" name="remove_bar" value="1" />';
 	  echo '<input type="button" class="btn_blues" name="btn_blues" value="Print Out">'; 
       echo '<script type="text/javascript">function toggle(source) {checkboxes = document.getElementsByName("bar[]"); for(var i=0, n=checkboxes.length;i<n;i++) {checkboxes[i].checked = source.checked; }}</script>';
-	  wp_nonce_field('barcode_display_products_n6', 'barcode_display_products_nonce_5');
 	  echo '<input type="submit" class="btn_reds" name="btn_reds" value="Remove"><input type="checkbox" onClick="toggle(this)" />Select All Checkboxes<br/>';
 	  echo '</form>';
         }
@@ -397,7 +395,9 @@ if(!class_exists('HP_Barcode')){
 	  $string = mb_strimwidth(get_the_title(), 0, intval($len), ' ');
 	  }
 
-	  $img = hp_barcode_img_t($string, get_the_ID());
+	  $sku = get_post_meta(get_the_ID(), '_sku', true);	
+
+	  $img = hp_barcode_img_t($string);
 
 	  ob_start();
 	  imagepng($img);
@@ -438,7 +438,6 @@ if(!class_exists('HP_Barcode')){
 	  wp_nonce_field('barcode_display_products_n2', 'barcode_display_products_nonce_1');
 	  echo '<script type="text/javascript">$(document).ready(function() {$("#valida").valida();});</script><br>';
 	  echo '<fieldset>';
-	  wp_nonce_field('barcode_display_products_n6', 'barcode_display_products_nonce_5');
 	  echo '<div class="codetype">';
 	  echo '<label for="codetype">Select CodeType:</label>';
 	  echo '<select name="codetype" required id="codetype" data-required="Please Select Codetype." require class="at-required">';
@@ -470,7 +469,6 @@ if(!class_exists('HP_Barcode')){
 
       wp_nonce_field('barcode_display_products_n1', 'barcode_display_products_nonce_2');
 	  echo '<input type="submit" class="btn_blue" name="btn_blue" value="Generate">';
-	  wp_nonce_field('barcode_display_products_n5', 'barcode_display_products_nonce_6');
 	  echo '<input type="reset" class="btn_reds" name="btn_reds" value="Reset">';
 	  echo '</form>';
 	  }
@@ -485,7 +483,7 @@ if(!class_exists('HP_Barcode')){
 	  echo '<p style="font-size: 14px;"><strong> Total Numbers of Barcode:<span style="margin: 0px 0px 0px 6px;">'.esc_js(esc_html(count($result1))).'</span></strong> </p>';
 	  echo '<br>';
 	  echo '<form method="POST" action="">';
-	  wp_nonce_field('barcode_display_products_n3', 'barcode_display_products_nonce_4');
+	  wp_nonce_field('barcode_display_products_n1', 'barcode_display_products_nonce_2');
 	  if ($_SERVER['REQUEST_METHOD']=="POST" && $_POST['remove_bar']) {
 	  if ($_GET['bar']) $_POST['bar'][] = $_GET['bar'];
 	  $count = 0;
@@ -498,7 +496,6 @@ if(!class_exists('HP_Barcode')){
 	  }
 	  echo '<table style="border-collapse: collapse; width: 100%; border: 1px solid black; background-color: white;" id="printBar">
 	  <tbody>';
-	  wp_nonce_field('barcode_display_products_n5', 'barcode_display_products_nonce_6');
 	  global $wpdb;
 	  $row_count=0;
 	  $col_count=0;
@@ -521,11 +518,10 @@ if(!class_exists('HP_Barcode')){
 	  }
 	  echo '</tbody></table>'; 
 	  echo '<br>';
-	  wp_nonce_field('barcode_display_products_n4', 'barcode_display_products_nonce_3');
+	  wp_nonce_field('barcode_display_products_n2', 'barcode_display_products_nonce_1');
       echo '<input type="hidden" name="remove_bar" value="1" />';
 	  echo '<input type="button" class="btn_blues" name="btn_blues" value="Print Out">'; 
       echo '<script type="text/javascript">function toggle(source) {checkboxes = document.getElementsByName("bar[]"); for(var i=0, n=checkboxes.length;i<n;i++) {checkboxes[i].checked = source.checked; }}</script>';
-	  wp_nonce_field('barcode_display_products_n6', 'barcode_display_products_nonce_5');
 	  echo '<input type="submit" class="btn_reds" name="btn_reds" value="Remove"><input type="checkbox" onClick="toggle(this)" />Select All Checkboxes<br/>';
 	  echo '</form>';
 	  }
@@ -570,7 +566,8 @@ if(!class_exists('HP_Barcode')){
 	  }
 
 	  $sku = get_post_meta(get_the_ID(), '_sku', true);
-	  $img = hp_barcode_img_s($sku, get_the_ID());
+
+	  $img = hp_barcode_img_s($sku);
 
 	  ob_start();
 	  imagepng($img);
@@ -611,7 +608,6 @@ if(!class_exists('HP_Barcode')){
 	  wp_nonce_field('barcode_display_products_n2', 'barcode_display_products_nonce_1');
 	  echo '<script type="text/javascript">$(document).ready(function() {$("#valida").valida();});</script><br>';
 	  echo '<fieldset>';
-	  wp_nonce_field('barcode_display_products_n6', 'barcode_display_products_nonce_5');
 	  echo '<div class="codetype">';
 	  echo '<label for="codetype">Select CodeType:</label>';
 	  echo '<select name="codetype" required id="codetype" data-required="Please Select Codetype." require class="at-required">';
@@ -636,7 +632,6 @@ if(!class_exists('HP_Barcode')){
 
 	  wp_nonce_field('barcode_display_products_n1', 'barcode_display_products_nonce_2');
 	  echo '<input type="submit" class="btn_blue" name="btn_blue" value="Generate">';
-	  wp_nonce_field('barcode_display_products_n5', 'barcode_display_products_nonce_6');
 	  echo '<input type="reset" class="btn_reds" name="btn_reds" value="Reset">';
 	  echo '</form>';
 	  }
@@ -650,7 +645,7 @@ if(!class_exists('HP_Barcode')){
 	  echo '<p style="font-size: 14px;"><strong> Total Numbers of Barcode:<span style="margin: 0px 0px 0px 6px;">'.esc_js(esc_html(count($result1))).'</span></strong> </p>';
 	  echo '<br>';
 	  echo '<form method="POST" action="">';
-	  wp_nonce_field('barcode_display_products_n3', 'barcode_display_products_nonce_4');
+	  wp_nonce_field('barcode_display_products_n1', 'barcode_display_products_nonce_2');
 	  if ($_SERVER['REQUEST_METHOD']=="POST" && $_POST['remove_bar']) {
 	  if ($_GET['bar']) $_POST['bar'][] = $_GET['bar'];
 	  $count = 0;
@@ -663,7 +658,6 @@ if(!class_exists('HP_Barcode')){
 	  }
 	  echo '<table style="border-collapse: collapse; width: 100%; border: 1px solid black; background-color: white;" id="printBar">
 	  <tbody>';
-	  wp_nonce_field('barcode_display_products_n5', 'barcode_display_products_nonce_6');
 	  global $wpdb;
 	  $row_count=0;
 	  $col_count=0;
@@ -686,13 +680,11 @@ if(!class_exists('HP_Barcode')){
 	  }
 	  echo '</tbody></table>'; 
 	  echo '<br>';
-	  wp_nonce_field('barcode_display_products_n4', 'barcode_display_products_nonce_3');
+	  wp_nonce_field('barcode_display_products_n2', 'barcode_display_products_nonce_1');
       echo '<input type="hidden" name="remove_bar" value="1" />';
 	  echo '<input type="button" class="btn_blues" name="btn_blues" value="Print Out">'; 
       echo '<script type="text/javascript">function toggle(source) {checkboxes = document.getElementsByName("bar[]"); for(var i=0, n=checkboxes.length;i<n;i++) {checkboxes[i].checked = source.checked; }}</script>';
-	  wp_nonce_field('barcode_display_products_n6', 'barcode_display_products_nonce_5');
-	  echo '<input type="submit" class="btn_reds" name="btn_reds" value="Remove"><input type="checkbox" onClick="toggle(this)" />Select All Checkboxes<br/>';	 
-	  echo '</form>';
+	  echo '<input type="submit" class="btn_reds" name="btn_reds" value="Remove"><input type="checkbox" onClick="toggle(this)" />Select All Checkboxes<br/>';	  echo '</form>';
 	  }
        }
 	  // Check if HP_Barcode exists then
