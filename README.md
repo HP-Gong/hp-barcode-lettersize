@@ -4,69 +4,67 @@ Creating and Printing Barcodes on Letter-Size Papers.
 
 == Description ==
 
-The purpose of the Barcode Letter-Size plugin is to create barcodes to identify/match your products. So when you do your 
-inventory, you can check to see how many products you have in stock on the website and compare what you actually have in
-your storage or warehouse. This will help you keep track the actual number of products you have in stock and then you will
-update the actual numbers on the website. Most likely you have to create an excel sheet that has your products, sku, prices
-and the number in stocks so you can keep track monthly or you can download this plugin: <a href="https://wordpress.org/plugins/easy-export/">Easy Export</a> 
-that also keep track of the products or used both.
+The purpose of the Barcode Letter-Size plugin is to create barcodes to identify/match your products.
 
-When you scan the barcode(s) on all 3 options, the SKU will appear only.
+The Barcode Letter-Size plugin can display 48 barcode(s) on Firefox, Chrome and Opera (except Mircosoft Edge which display 60 barcodes) per print page
+
+When you scan the barcode(s) (10 designs), the SKU will appear.
 
 == Installation ==
 
-1. Upload the plugin from your WordPress Plugins section
-2. Activate the plugin through the 'Plugins' menu in WordPress
+1. Download and activate WooCommerce plugin which is required for Barcode Letter-Size plugin to work.
+2. Upload the plugin from your WordPress Plugins section.
+3. Activate the plugin through the 'Plugins' menu in WordPress.
 
 == Instructions ==
 
 The instructions is in the master zip file
 
-Read the barcode-overview.pdf for more details how the plugin works and how to print from the browsers
+Read the barcode-overview.pdf for more details how the plugin works and how to print from the browsers.
 
-These are the 4 current browsers to print out the barcodes:
+These are the 4 current browsers that currently support/display this plugin correctly and print out the barcodes:
 
-1. FireFox (Current Version: 53.0.3 and up)
-2. Chrome (Current Version: 58.0 and up)
-3. Opera (Current Version: 45.0 and up)
-4. Internet Explorer (Last Version: 11)
+1. FireFox (Current Version: 63.0.3 and up)
+2. Chrome (Current Version: 70.0.3 and up)
+3. Opera (Current Version: 56.0.3 and up)
+4. Microsoft Edge (Current Version: 42.17 and up)
 
-The Barcode Letter-Size plugin can display 48 barcodes per print page. 
+The Barcode Letter-Size plugin can display 48 barcode(s) on Firefox, Chrome and Opera (except Mircosoft Edge which display 60 barcodes) per print page
+
+Once the sheet is print out, you can used a scissor to cut out the barcodes.
 
 I recommended that you delete the barcode(s) once you print the ones you wanted so you save space on your website.
 
 == Frequently Asked Questions == 
 
-Q. How many bar appears on the each sheets?
+<b>Q. How many bar appears on the each sheets?</b>
 
-A. The Barcode Letter-Size plugin can display 48 barcodes per print page.
+<b>A.</b> The Barcode Letter-Size plugin can display 48 barcode(s) on Firefox, Chrome and Opera (except Mircosoft Edge which display 60 barcodes) per print page
 
-Q. What will it appear when scan on the barcode(s)?
+<b>Q. What will it appear when scan on the barcode(s)?</b>
 
-A. When you scan the barcode(s) on all 3 options, the SKU will appear.
+<b>A.</b> When you scan the barcode(s), the SKU will appear.
 
-Q. What kind of labels are used for the Barcode Letter-Size plugin?
+<b>Q. What kind of labels are used for the Barcode Letter-Size plugin?</b>
 
-A. You have to used a Full-Sheet Labels / Full Page Labels.
+<b>A.</b> You have to used a Full-Sheet Labels / Full Page Labels.
 
-Q. How many options and designs?
+<b>Q. How many barcode designs?</b>
 
-A. There are 3 different options and there are six codetype designs:
+<b>A.</b> There are 10 codetype designs, 8 barcodes designs & 2 qr designs:
 
-<h4>3 options for creating the barcode with:</h4>
+<h4> There are 10 codetypes (designs): </h4>
 
-1. Title & Sku
-2. Title
-3. Sku
-
-<h4>There are 6 codetypes (barcode designs):</h4>
-
-1. code128a
-2. code128b
-3. code128c
-4. code25
-5. code39
-6. codabar
+1. upc-a
+2. ean-13
+3. ean-8
+4. code-39
+5. code-93
+6. ean-128
+7. code-128
+8. itf
+9. qr
+10. dmtx
 
 == Languages and Software ==
 
