@@ -31,8 +31,8 @@ The purpose of the Barcode Letter-Size plugin is to create barcodes to identify/
 * Modify & Update & Add codes on the plugin.
 * Update README file.
 * Update Instructions for the barcode-overview.pdf.
-* TEST: Wordpress 5.0.2 - PASS
-* TEST: WooCommerce 3.5.3 - PASS
+* Compatible and tested with Wordpress 5.0.2 
+* Compatible and tested with WooCommerce 3.5.3
 * Maintenance.
 
 = Version 1.1.4 - 01-01-2018 =
