@@ -2,7 +2,7 @@
 
 Creating and Printing Barcodes on Letter-Size Papers.
 
-== Description ==
+<b>== Description ==</b>
 
 The purpose of the Barcode Letter-Size plugin is to create barcodes to identify/match your products.
 
