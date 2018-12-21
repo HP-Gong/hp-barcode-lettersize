@@ -2,7 +2,7 @@
 
 Contributors: hpgong
 Donate link: N/A
-Tags: barcode, barcode generator, print barcode labels, product sku, inventory, ean, upc, code128, code39, code25, qr, dmtx
+Tags: barcode, barcode generator, print barcode labels, EAN/UPC, code-128
 Version: 1.2.0
 Requires at least: 5.0.2
 Tested up to: 5.0.2
@@ -17,10 +17,6 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 == Description ==
 
 The purpose of the Barcode Letter-Size plugin is to create barcodes to identify/match your products.
-
-The Barcode Letter-Size plugin can display 48 barcode(s) on Firefox, Chrome and Opera (except Mircosoft Edge which display 60 barcodes) per print page
-
-When you scan the barcode(s) (10 designs), the SKU will appear.
 
 == Installation ==
 
@@ -91,31 +87,27 @@ These are the 4 current browsers that currently support/display this plugin corr
 3. Opera (Current Version: 56.0.3 and up)
 4. Microsoft Edge (Current Version: 42.17 and up)
 
-The Barcode Letter-Size plugin can display 48 - 60 barcodes per print page (depending on the browser you are using).
+== Frequently Asked Questions == 
+
+**How many barcode appears on the each sheets?**
+
+The Barcode Letter-Size plugin can display 48 barcode(s) on Firefox, Chrome and Opera (except Mircosoft Edge which display 60 barcodes) per print page
 
 Once the sheet is print out, you can used a scissor to cut out the barcodes.
 
 I recommended that you delete the barcode(s) once you print the ones you wanted so you save space on your website.
 
-== Frequently Asked Questions == 
+**What will it appear when scan on the barcode(s)?**
 
-Q. How many bar appears on the each sheets?
+When you scan the barcode(s), the SKU will appear.
 
-A. The Barcode Letter-Size plugin can display 48 barcode(s) on Firefox, Chrome and Opera (except Mircosoft Edge which display 60 barcodes) per print page
+**What kind of labels are used for the Barcode Letter-Size plugin?**
 
-Q. What will it appear when scan on the barcode(s)?
+You have to used a Full-Sheet Labels / Full Page Labels.
 
-A. When you scan the barcode(s), the SKU will appear.
+**How many barcode designs?**
 
-Q. What kind of labels are used for the Barcode Letter-Size plugin?
-
-A. You have to used a Full-Sheet Labels / Full Page Labels.
-
-Q. How many barcode designs?
-
-A. There are 10 codetype designs, 8 barcodes designs & 2 qr designs:
-
-<h4>There are 10 codetypes (designs):</h4>
+There are 10 codetype designs, 8 barcodes designs & 2 qr designs:
 
 1. upc-a
 2. ean-13
@@ -128,7 +120,6 @@ A. There are 10 codetype designs, 8 barcodes designs & 2 qr designs:
 9. qr
 10. dmtx
 
-Q. What happened if I deactivate the plugin or delete the plugin?
-A. If you deactivate the plugin it will stay on the plugin page and the Bar tables will be still on wordpress database. 
-But if you delete/remove the plugin it will delete the folders, files and also the tables from the
-wordpress database.
+**What happened if I deactivate the plugin or delete the plugin?**
+
+If you deactivate the plugin it will stay on the plugin page. But if you delete/remove the plugin it will delete the folders, files and also the tables from the wordpress database.
