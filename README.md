@@ -10,13 +10,13 @@ The Barcode Letter-Size plugin can display 48 barcode(s) on Firefox, Chrome and 
 
 When you scan the barcode(s) (10 designs), the SKU will appear.
 
-== Installation ==
+<b>== Installation ==</b>
 
 1. Download and activate WooCommerce plugin which is required for Barcode Letter-Size plugin to work.
 2. Upload the plugin from your WordPress Plugins section.
 3. Activate the plugin through the 'Plugins' menu in WordPress.
 
-== Instructions ==
+<b>== Instructions ==</b>
 
 The instructions is in the master zip file
 
@@ -35,7 +35,7 @@ Once the sheet is print out, you can used a scissor to cut out the barcodes.
 
 I recommended that you delete the barcode(s) once you print the ones you wanted so you save space on your website.
 
-== Frequently Asked Questions == 
+<b>== Frequently Asked Questions ==</b> 
 
 <b>Q. How many bar appears on the each sheets?</b>
 
@@ -66,7 +66,7 @@ I recommended that you delete the barcode(s) once you print the ones you wanted 
 9. qr
 10. dmtx
 
-== Languages and Software ==
+<b>== Languages and Software ==</b>
 
 I used Indesign to create the barcode-overview.pdf file.
 
