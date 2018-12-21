@@ -4,8 +4,8 @@ Contributors: hpgong
 Donate link: N/A
 Tags: barcode, barcode generator, print barcode labels, product sku, inventory, ean, upc, code128, code39, code25, qr, dmtx
 Version: 1.2.0
-Requires at least: 5.0.0
-Tested up to: 5.0.0
+Requires at least: 5.0.2
+Tested up to: 5.0.2
 Stable tag: 1.2.0
 Author: H.P. Gong
 Author URI: https://github.com/hp-gong
@@ -35,8 +35,8 @@ When you scan the barcode(s) (10 designs), the SKU will appear.
 * Modify & Update & Add codes on the plugin.
 * Update README file.
 * Update Instructions for the barcode-overview.pdf.
-* TEST: Wordpress 5.0.0 - PASS
-* TEST: WooCommerce 3.5.2 - PASS
+* TEST: Wordpress 5.0.2 - PASS
+* TEST: WooCommerce 3.5.3 - PASS
 * Maintenance.
 
 = Version 1.1.4 - 01-01-2018 =
