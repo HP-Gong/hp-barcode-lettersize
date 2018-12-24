@@ -2,6 +2,10 @@
 
 Creating and Printing Barcodes on Letter-Size Papers.
 
+<b>== Wordpress Page ==</b>
+
+https://wordpress.org/plugins/barcode-lettersize/
+
 <b>== Description ==</b>
 
 The purpose of the Barcode Letter-Size plugin is to create barcodes to identify/match your products.
