@@ -4,7 +4,7 @@ Creating and Printing Barcodes on Letter-Size Papers.
 
 <b>== Wordpress Page ==</b>
 
-https://wordpress.org/plugins/barcode-lettersize/
+<a href="https://wordpress.org/plugins/barcode-lettersize/" target="_blank">Barcode Letter-Size</a>
 
 <b>== Description ==</b>
 
