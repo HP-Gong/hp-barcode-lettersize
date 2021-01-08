@@ -37,3 +37,6 @@ li{display: list-item;list-style-position: inside;}
     text-align: center;
 }
 
+#bart {
+    text-align: center; display: block;
+}
